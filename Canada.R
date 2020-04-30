@@ -1,6 +1,6 @@
 
 #--------------before doing this the first time, you need to download these packages. You only need to do this once.
-install.packages(c('sf', 'foreign', 'tidyverse', 'lwgeom'))
+# install.packages(c('sf', 'foreign', 'tidyverse', 'lwgeom'))
 
 
 #-------------every time you open a new R session you'll want to load in the necessary libraries.-----
@@ -16,14 +16,14 @@ options(stringsAsFactors = FALSE)
 #https://open.canada.ca/data/en/dataset/82efb454-3241-4440-a5d4-8b03a42f4df8
 
 #set the directory to work out of. You'll want this to be the folder you unzipped the files to. Make sure to use / instead of \ in the path.
-setwd("C:/Users/Erin/Documents/DataViz/Canada/")
+setwd("/Users/kcedrone/Documents/git/other/RoadColors/canada/")
 
 #change this to the name of the files you downloaded (sans suffix)
-filename <- "grnf047r09a_e"
+filename <- "grnf035r10a_e"
 
-#pick a lat/long to be at the center of your map. I chose a point in Saskatoon
-lat <- 52.139224
-long <- -106.646308
+#pick a lat/long to be at the center of your map. I chose a point in Mississauga
+lat <- 43.703
+long <- -79.653
   
 #pick a radius to plot the roads in (in meters)
 rad <- 10000
