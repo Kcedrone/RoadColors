@@ -27,6 +27,8 @@ Here are the steps I took to make a map of Boston-area roads from [erdavis1's wo
         * latitude = 42.3667, longitude = -71.059
     * Put the latitude and longitude in `Line 9` of `UnitedStates.r`
     
+1. Put the city name on `Line 10` of `UnitedStates.r`
+    
 1. Identify the names of counties within 15 miles of this point.
     *  I did a [DuckDuckGo images search for "Massachusetts county map"](https://duckduckgo.com/?q=massachusetts+county+map&t=hy&ia=images&iax=images).
         * Suffolk
@@ -38,7 +40,9 @@ Here are the steps I took to make a map of Boston-area roads from [erdavis1's wo
         * 25025
         * 25017
         * 25021
-        
+
+1. Put the GEOIDs in `Line 11` of `UnitedStates.r`
+
 1. Download and unzip the roads shapefiles for each GEOID: 
     * [ftp://ftp2.census.gov/geo/tiger/TIGER2018/ROADS/](ftp://ftp2.census.gov/geo/tiger/TIGER2018/ROADS/)
     * For every GEOID, unzip the roads shapefiles into the `Roads` folder.
