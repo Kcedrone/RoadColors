@@ -3,18 +3,54 @@
 United States:
 Plot roads in a US city, coloring each by its designation (e.g. Street, Road, Avenue)
 
-Before you get started, you’ll need to get a few things prepared:
+Here are the steps I took to make a map of Boston-area roads from [erdavis1's wonderful RoadColors code](https://github.com/erdavis1/RoadColors)
 
-1. Find the lat/long point you’d like to be at the center of your map
-2. Identify the GEOIDs of counties that are within 15 miles of this point. This site is very helpful: https://census.missouri.edu/geocodes/
-3. Download roads shapefiles for the counties in step 2: 
-ftp://ftp2.census.gov/geo/tiger/TIGER2018/ROADS/
-4. Download feature names shapefiles for the counties in step 2: https://www2.census.gov/geo/tiger/TIGER2018/FEATNAMES/
+1. [Download and install R](https://cran.r-project.org/doc/FAQ/R-FAQ.html#How-can-R-be-installed_003f)
 
-This code isn't as well commented as Canada or Worldwide, so you might want to start with either of those first.
+1. Run R and install the required packages
+    1. `install.packages("sf")`
+    1. `install.packages("foregin")`
+    1. `install.packages("tidyverse")`
+    1. `install.packages("lwgeom")`
+    
+1. Clone the [RoadColors repo](https://github.com/erdavis1/RoadColors).
 
-Canada:
-Plot roads in a Canadian city, coloring each by its designation
+1. Rename `UnitedStates` to `UnitedStates.r`
 
-Worldwide:
-Plot roads in any worldwide city using OpenStreetMap data. It derives road designations from the road name. I only wrote this to work for countries that use English or Romance languages--it doesn't work for languages like German (which mashes the road designation into the road name with no spaces) or languages that don't use the Latin alphabet.
+1. Within the RoadColors repo local directory:
+    * Make folder called “FeatNames”
+    * Make folder called “Roads”
+    * Make folder called “IndivRoads” (this will be the output directory)
+
+1. Identify the latitude and longitude for the center of the map
+    * The lat and long are in the [URL of Open Street Maps](https://www.openstreetmap.org/search?query=boston%2C%20ma#map=12/42.3667/-71.0591).
+        * latitude = 42.3667, longitude = -71.059
+    * Put the latitude and longitude in `Line 9` of `UnitedStates.r`
+    
+1. Put the city name on `Line 10` of `UnitedStates.r`
+    
+1. Identify the names of counties within 15 miles of this point.
+    *  I did a [DuckDuckGo images search for "Massachusetts county map"](https://duckduckgo.com/?q=massachusetts+county+map&t=hy&ia=images&iax=images).
+        * Suffolk
+        * Middlesex
+        * Norfolk
+        
+1. Identify the GEOIDs of the counties. 
+    * This site is very helpful: [https://census.missouri.edu/geocodes/](https://census.missouri.edu/geocodes/). 
+        * 25025
+        * 25017
+        * 25021
+
+1. Put the GEOIDs in `Line 11` of `UnitedStates.r`
+
+1. Download and unzip the roads shapefiles for each GEOID: 
+    * [ftp://ftp2.census.gov/geo/tiger/TIGER2018/ROADS/](ftp://ftp2.census.gov/geo/tiger/TIGER2018/ROADS/)
+    * For every GEOID, unzip the roads shapefiles into the `Roads` folder.
+    
+1. Download and unzip the feature names shapefiles for each GEOID: 
+    * [https://www2.census.gov/geo/tiger/TIGER2018/FEATNAMES/](https://www2.census.gov/geo/tiger/TIGER2018/FEATNAMES/)
+    * For every GEOID, unzip the roads shapefiles into the `FeatNames` folder.
+    
+1. Run it!
+
+1. Look at Boston.png output in `IndivRoads` folder
