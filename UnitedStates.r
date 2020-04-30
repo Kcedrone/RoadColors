@@ -6,9 +6,9 @@ library(lwgeom)
 
 options(stringsAsFactors = FALSE)
 
-pt <- data.frame(lat = YOURLATHERE, long = YOURLONHERE)
-city <- 'CITYNAMEHERE'
-geoid <-  c('GEOID1', 'GEOID2', 'GEOIDN')
+pt <- data.frame(lat = 42.3667, long = -71.059)
+city <- 'Boston'
+geoid <-  c('25017', '25025', '25021')
 
 #-------import road files.----------
 files <- list.files(path="./FeatNames", pattern="*.dbf", full.names=TRUE, recursive=FALSE) %>% as.data.frame
