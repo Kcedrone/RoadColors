@@ -23,8 +23,8 @@ Here are the steps I took to make a map of Boston-area roads from [erdavis1's wo
     * Make folder called “IndivRoads” (this will be the output directory)
 
 1. Identify the latitude and longitude for the center of the map
-    * The lat and long are in the [URL of Open Street Maps](https://www.openstreetmap.org/search?query=boston%2C%20ma#map=10/42.3129/-70.9985).
-        * latitude = 42.3129, longitude = -70.9985
+    * The lat and long are in the [URL of Open Street Maps](https://www.openstreetmap.org/search?query=boston%2C%20ma#map=12/42.3667/-71.0591).
+        * latitude = 42.3667, longitude = -71.059
     * Put the latitude and longitude in `Line 9` of `UnitedStates.r`
     
 1. Identify the names of counties within 15 miles of this point.
